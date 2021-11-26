@@ -1,14 +1,22 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <global-header />
     <router-view/>
   </div>
 </template>
 
+<script>
+import GlobalHeader from '@/components/GlobalHeader.vue'
+
+export default {
+    components: {
+        GlobalHeader
+    }
+}
+</script>
+
 <style>
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -28,5 +36,9 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.navbar {
+  background: #c0c0c0;
 }
 </style>
