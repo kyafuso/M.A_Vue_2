@@ -15,41 +15,41 @@
                 <div class="field">
                   <div class="control">
                     <label class="radio">
-                      <input type="radio" v-model="form.insurance" value="yes">
+                      <input type="radio" @click="openHospitalization" v-model="insurance" value="yes">
                       はい
                     </label>
                     <label class="radio">
-                      <input type="radio" v-model="form.insurance" value="no">
+                      <input type="radio" @click="openHospitalization" v-model="insurance" value="no">
                       いいえ
                     </label>
                   </div>
                 </div>
               </div>
-              <div v-if="form.insurance">              
+              <div v-if="isOpenHospitalization">              
                 <p>現在入院中ですか。または最近3カ月以内に医師の診察・検査の結果、入院・手術をすすめられたことはありますか？</p>
                 <div class="field">
                   <div class="control">
                     <label class="radio">
-                      <input type="radio" v-model="form.hospitalization" value="yes">
+                      <input type="radio" @click="openHistory" v-model="hospitalization" value="yes">
                       はい
                     </label>
                     <label class="radio">
-                      <input type="radio" v-model="form.hospitalization" value="no">
+                      <input type="radio" @click="openHistory" v-model="hospitalization" value="no">
                       いいえ
                     </label>
                   </div>
                 </div>
               </div> 
-              <div v-if="form.hospitalization">             
+              <div v-if="isOpenHistory">             
                 <p>過去5年以内に、病気やけがで、手術をうけたことまたは継続して7日以上の入院をしたことがありますか？</p>
                 <div class="field">
                   <div class="control">
                     <label class="radio">
-                      <input type="radio" v-model="form.history" value="yes">
+                      <input type="radio" v-model="history" value="yes">
                       はい
                     </label>
                     <label class="radio">
-                      <input type="radio" v-model="form.history" value="no">
+                      <input type="radio" v-model="history" value="no">
                       いいえ
                     </label>
                   </div>
@@ -62,7 +62,6 @@
           <button @click="$router.push('step1')" class="button is-primary">前へ戻る</button>  
           <button @click="$router.push('step3')" class="button is-primary">次へ進む</button>
         </div>
-        <!-- <pre><code>{{ form }}</code></pre> -->
       </div>    
     </div>
   </div>
@@ -71,9 +70,44 @@
 <script>
 export default {
   name: 'Step2',
+  data: function(){
+    return {
+      isOpenHospitalization : false,
+      isOpenHistory : false
+    }
+  },
+  methods: {
+    openHospitalization: function(){
+      this.isOpenHospitalization = true
+    },    
+    openHistory: function(){
+      this.isOpenHistory = true
+    },
+  },
   computed : {
-    form : function(){
-      return this.$store.state.form
+    insurance: {
+      get() {
+        return this.$store.state.insurance;
+      },
+      set(value) {
+        this.$store.commit('setInsurance', value);
+      }
+    },
+    hospitalization: {
+      get() {
+        return this.$store.state.hospitalization;
+      },
+      set(value) {
+        this.$store.commit('setHospitalization', value);
+      }
+    },
+    history: {
+      get() {
+        return this.$store.state.history;
+      },
+      set(value) {
+        this.$store.commit('setHistory', value);
+      }
     }
   }
 }

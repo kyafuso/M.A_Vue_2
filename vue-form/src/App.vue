@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <global-header />
+    <Header />
     <router-view/>
   </div>
 </template>
 
 <script>
-import GlobalHeader from '@/components/GlobalHeader.vue'
+import Header from '@/components/Header.vue'
 
 export default {
     components: {
-        GlobalHeader
+        Header
     }
 }
 </script>

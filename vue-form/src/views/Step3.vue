@@ -13,7 +13,7 @@
               <p>-ご相談内容-</p>
               <div class="field">
                 <div class="control">
-                  <textarea v-model="form.consultation" class="textarea"></textarea>
+                  <textarea v-model="consultation" class="textarea"></textarea>
                 </div>
               </div>
             </div>
@@ -23,7 +23,6 @@
           <button @click="$router.push('step2')" class="button is-primary">前へ戻る</button>  
           <button class="button is-primary">次へ進む</button>
         </div>
-        <!-- <pre><code>{{ form }}</code></pre> -->
       </div>
     </div>
   </div>
@@ -33,8 +32,13 @@
 export default {
   name: 'Step3',
   computed : {
-    form : function(){
-      return this.$store.state.form
+    consultation: {
+      get() {
+        return this.$store.state.consultation;
+      },
+      set(value) {
+        this.$store.commit('setConsultation', value);
+      }
     }
   }
 }
