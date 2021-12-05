@@ -14,11 +14,11 @@
               <div class="field">
                 <div class="control">
                   <label class="radio">
-                    <input type="radio" v-model="gender" value="male">
+                    <input type="radio" v-model="gender" value="男性">
                     男性
                   </label>
                   <label class="radio">
-                    <input type="radio" v-model="gender" value="female">
+                    <input type="radio" v-model="gender" value="女性">
                     女性
                   </label>
                 </div>

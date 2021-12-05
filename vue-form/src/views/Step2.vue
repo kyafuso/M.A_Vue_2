@@ -15,11 +15,11 @@
                 <div class="field">
                   <div class="control">
                     <label class="radio">
-                      <input type="radio" @click="openHospitalization" v-model="insurance" value="yes">
+                      <input type="radio" @click="openHospitalization" v-model="insurance" value="はい">
                       はい
                     </label>
                     <label class="radio">
-                      <input type="radio" @click="openHospitalization" v-model="insurance" value="no">
+                      <input type="radio" @click="openHospitalization" v-model="insurance" value="いいえ">
                       いいえ
                     </label>
                   </div>
@@ -30,11 +30,11 @@
                 <div class="field">
                   <div class="control">
                     <label class="radio">
-                      <input type="radio" @click="openHistory" v-model="hospitalization" value="yes">
+                      <input type="radio" @click="openHistory" v-model="hospitalization" value="はい">
                       はい
                     </label>
                     <label class="radio">
-                      <input type="radio" @click="openHistory" v-model="hospitalization" value="no">
+                      <input type="radio" @click="openHistory" v-model="hospitalization" value="いいえ">
                       いいえ
                     </label>
                   </div>
@@ -45,11 +45,11 @@
                 <div class="field">
                   <div class="control">
                     <label class="radio">
-                      <input type="radio" v-model="history" value="yes">
+                      <input type="radio" v-model="history" value="はい">
                       はい
                     </label>
                     <label class="radio">
-                      <input type="radio" v-model="history" value="no">
+                      <input type="radio" v-model="history" value="いいえ">
                       いいえ
                     </label>
                   </div>
