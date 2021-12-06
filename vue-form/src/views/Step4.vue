@@ -47,73 +47,21 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Step4',
   computed : {
-    gender: {
-      get() {
-        return this.$store.state.gender;
-      },
-      set(value) {
-        this.$store.commit('setGender', value);
-      }
-    },
-    year: {
-      get() {
-        return this.$store.state.year;
-      },
-      set(value) {
-        this.$store.commit('setYear', value);
-      }
-    },
-    month: {
-      get() {
-        return this.$store.state.month;
-      },
-      set(value) {
-        this.$store.commit('setMonth', value);
-      }
-    },
-    day: {
-      get() {
-        return this.$store.state.day;
-      },
-      set(value) {
-        this.$store.commit('setDay', value);
-      }
-    }, 
-    insurance: {
-      get() {
-        return this.$store.state.insurance;
-      },
-      set(value) {
-        this.$store.commit('setInsurance', value);
-      }
-    },
-    hospitalization: {
-      get() {
-        return this.$store.state.hospitalization;
-      },
-      set(value) {
-        this.$store.commit('setHospitalization', value);
-      }
-    },
-    history: {
-      get() {
-        return this.$store.state.history;
-      },
-      set(value) {
-        this.$store.commit('setHistory', value);
-      }
-    }, 
-    consultation: {
-      get() {
-        return this.$store.state.consultation;
-      },
-      set(value) {
-        this.$store.commit('setConsultation', value);
-      }
-    }
+    ...mapGetters([
+      'gender',
+      'year',
+      'month',
+      'day',
+      'insurance',
+      'hospitalization',
+      'history',
+      'consultation'
+    ])
   }
 }
 </script>	

@@ -87,7 +87,7 @@ export default {
   computed : {
     insurance: {
       get() {
-        return this.$store.state.insurance;
+        return this.$store.getters.insurance;
       },
       set(value) {
         this.$store.commit('setInsurance', value);
@@ -95,7 +95,7 @@ export default {
     },
     hospitalization: {
       get() {
-        return this.$store.state.hospitalization;
+        return this.$store.getters.hospitalization;
       },
       set(value) {
         this.$store.commit('setHospitalization', value);
@@ -103,7 +103,7 @@ export default {
     },
     history: {
       get() {
-        return this.$store.state.history;
+        return this.$store.getters.history;
       },
       set(value) {
         this.$store.commit('setHistory', value);
