@@ -21,7 +21,7 @@
         </div>
         <div class="buttons is-justify-content-center mt-5">
           <button @click="$router.push('step2')" class="button is-primary">前へ戻る</button>  
-          <button class="button is-primary">次へ進む</button>
+          <button @click="$router.push('step4')" class="button is-primary">次へ進む</button>
         </div>
       </div>
     </div>
@@ -34,7 +34,7 @@ export default {
   computed : {
     consultation: {
       get() {
-        return this.$store.state.consultation;
+        return this.$store.getters.consultation;
       },
       set(value) {
         this.$store.commit('setConsultation', value);

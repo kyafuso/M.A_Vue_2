@@ -15,11 +15,11 @@
                 <div class="field">
                   <div class="control">
                     <label class="radio">
-                      <input type="radio" @click="openHospitalization" v-model="insurance" value="yes">
+                      <input type="radio" @click="openHospitalization" v-model="insurance" value="はい">
                       はい
                     </label>
                     <label class="radio">
-                      <input type="radio" @click="openHospitalization" v-model="insurance" value="no">
+                      <input type="radio" @click="openHospitalization" v-model="insurance" value="いいえ">
                       いいえ
                     </label>
                   </div>
@@ -30,11 +30,11 @@
                 <div class="field">
                   <div class="control">
                     <label class="radio">
-                      <input type="radio" @click="openHistory" v-model="hospitalization" value="yes">
+                      <input type="radio" @click="openHistory" v-model="hospitalization" value="はい">
                       はい
                     </label>
                     <label class="radio">
-                      <input type="radio" @click="openHistory" v-model="hospitalization" value="no">
+                      <input type="radio" @click="openHistory" v-model="hospitalization" value="いいえ">
                       いいえ
                     </label>
                   </div>
@@ -45,11 +45,11 @@
                 <div class="field">
                   <div class="control">
                     <label class="radio">
-                      <input type="radio" v-model="history" value="yes">
+                      <input type="radio" v-model="history" value="はい">
                       はい
                     </label>
                     <label class="radio">
-                      <input type="radio" v-model="history" value="no">
+                      <input type="radio" v-model="history" value="いいえ">
                       いいえ
                     </label>
                   </div>
@@ -87,7 +87,7 @@ export default {
   computed : {
     insurance: {
       get() {
-        return this.$store.state.insurance;
+        return this.$store.getters.insurance;
       },
       set(value) {
         this.$store.commit('setInsurance', value);
@@ -95,7 +95,7 @@ export default {
     },
     hospitalization: {
       get() {
-        return this.$store.state.hospitalization;
+        return this.$store.getters.hospitalization;
       },
       set(value) {
         this.$store.commit('setHospitalization', value);
@@ -103,7 +103,7 @@ export default {
     },
     history: {
       get() {
-        return this.$store.state.history;
+        return this.$store.getters.history;
       },
       set(value) {
         this.$store.commit('setHistory', value);

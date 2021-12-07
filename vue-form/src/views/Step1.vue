@@ -14,11 +14,11 @@
               <div class="field">
                 <div class="control">
                   <label class="radio">
-                    <input type="radio" v-model="gender" value="male">
+                    <input type="radio" v-model="gender" value="男性">
                     男性
                   </label>
                   <label class="radio">
-                    <input type="radio" v-model="gender" value="female">
+                    <input type="radio" v-model="gender" value="女性">
                     女性
                   </label>
                 </div>
@@ -71,7 +71,7 @@ export default {
   computed : {
     gender: {
       get() {
-        return this.$store.state.gender;
+        return this.$store.getters.gender;
       },
       set(value) {
         this.$store.commit('setGender', value);
@@ -79,7 +79,7 @@ export default {
     },
     year: {
       get() {
-        return this.$store.state.year;
+        return this.$store.getters.year;
       },
       set(value) {
         this.$store.commit('setYear', value);
@@ -87,7 +87,7 @@ export default {
     },
     month: {
       get() {
-        return this.$store.state.month;
+        return this.$store.getters.month;
       },
       set(value) {
         this.$store.commit('setMonth', value);
@@ -95,7 +95,7 @@ export default {
     },
     day: {
       get() {
-        return this.$store.state.day;
+        return this.$store.getters.day;
       },
       set(value) {
         this.$store.commit('setDay', value);

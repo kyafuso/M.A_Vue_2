@@ -14,7 +14,7 @@ export default new Vuex.Store({
     history : '',
     consultation : ''
   },
-  /*getters: {
+  getters: {
     gender: state => state.gender,
     year: state => state.year,
     month: state => state.month,
@@ -23,7 +23,7 @@ export default new Vuex.Store({
     hospitalization: state => state.hospitalization,
     history: state => state.history,
     consultation: state => state.consultation
-  },*/
+  },
   mutations: {
     setGender (state, gender) {
       state.gender = gender;
